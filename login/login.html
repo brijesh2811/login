@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="box">
+        <h1>Login</h1>
+        <section class="sec_1">
+            <div class="container_1">
+                <div class="box1">
+                    <form onclick="return validation()">
+                        <table>
+                            <tr class="un">
+                                <td><label for="username">Username</label></td>
+                                <td><input type="text" id="username" placeholder="Username" class="uname"></td>
+                                <td><span id="uerror"></span></td>
+                            </tr>
+                            <td class="line"></td>
+                            <tr calss="pw">
+                                <td><label for="password">Password</label></td>
+                                <td><input type="password" placeholder="Password" id="password" class="password"></td>
+                                <td>
+                                    <sapn id="perror"></sapn>
+                                </td>
+                                <td class="line2"></td>
+                            <tr class="fp">
+                                <td><a href="#">forgot password?</a></td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <td class="submit"><input type="submit" value="Login" id="submit"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="sce_2">
+            <div class="container_2">
+                <div class="box_2">
+                    <h5><a href="#">Or sign Up Using</a></h5>
+                </div>
+            </div>
+        </section>
+        <section class="sec_3">
+            <div class="container_3">
+                <div class="box_3">
+                    <ul>
+                        <li><a href="#"><img src="./facebook.png" alt="facebook"></a></li>
+                        <li><a href="#"><img src="./twitter.png" alt="twitter"></a></li>
+                        <li><a href="#"><img src="./google.png" alt="google"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <secrtion class="sec_4">
+            <div class="container_4">
+                <div class="box_4">
+                    <div class="box2">
+                        <h6><a href="#">Or sign Up Using</a></h6>
+                    </div>
+                </div>
+            </div>
+        </secrtion>
+        <section class="sec_5">
+            <div class="container_5">
+                <div class="box_5">
+                    <h2><a href="#">Sign Up</a></h2>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        let login = document.getElementById("submit");
+        console.log(username, password,login);
+
+        function validation() {
+            /* username error*/
+            if (username.value === "") {
+                console.log("Please enter a username");
+                uerror.innerHTML = "*Please enter a username"
+            }
+            else {
+                uerror.innerHTML = ""
+            }
+            /* password error*/
+            if (password.value.length === "") {
+                console.log("Please enter a password");
+                perror.innerHTML = "*please enter a password"
+            }
+            else if (password.value.length <= 4) {
+                console.log("enter password less than 4 characters");
+                perror.innerHTML = "enter password less than 4 characters"
+            }
+            else if (password.value.length >= 16) {
+                console.log("your password more than 16 characters");
+                perror.innerHTML = "your password more than 16 characters"
+            }
+            else {
+                innerHTML = ""
+            }
+            confirm("Sure Login Your Account")
+            return false;
+        }
+    </script>
+</body>
+
+</html>
